@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiryu DB</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    <link rel="icon" type="image/png" href="../static/images/logowebclaseGrande.png">
+</head>
+
+<body>
+    <header>
+        <button class="logo-btn">
+            <a href="html.html">
+                <img src="../static/images/logo web clasepeque.png" alt="Botón de imagen" class="logo">
+            </a>
+        </button>
+        <input type="text" placeholder="Buscar" id="searchBar" class="search-bar">
+        <div class="dropdown">
+            <button class="dropdown-btn">
+                <img src="../static/images/klipartz.com.png" alt="Imagen de desplegable" class="dropdown-img">
+            </button>
+
+            <div class="dropdown-content">
+                <a href="../templates/top100.html">Top 100</a>
+                <a href="../templates/lanzamientos.html">Lanzamientos recientes</a>
+                <a href="../templates/randomizer.html">Randomizer</a>
+            </div>
+        </div>
+    </header>
+    <div class="wrapper">
+        <div class="container" id="games-list">
+            <!-- Aquí se insertarán dinámicamente las tarjetas de los juegos -->
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Kiryu.DB</p>
+    </footer>
+
+    <script>
+        // Tu código JavaScript para cargar y mostrar los datos del JSON aquí
+        fetch('static/json/games.json')
+            .then(response => response.json())
+            .then(data => {
+                const gamesList = document.getElementById('games-list');
+
+                data.forEach(game => {
+                    const card = document.createElement('div');
+                    card.classList.add('card');
+                    card.innerHTML = `
+                        <img class="cover" src="${game.cover}" alt="${game.name}">
+                        <div class="content">
+                            <h1 class="h1-card">${game.name}</h1>
+                            <p class="p-card">Géneros: ${game.genres.join(', ')}</p>
+                            <p class="p-card">Fecha de salida: ${game.release_dates}</p>
+                        </div>
+                    `;
+                    gamesList.appendChild(card);
+                });
+            })
+            .catch(error => console.error('Error al cargar los datos:', error));
+    </script>
+</body>
+</html>

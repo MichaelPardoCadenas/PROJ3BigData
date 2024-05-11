@@ -1,0 +1,129 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Poppins;
+    background-color: #EFB7FF;
+}
+
+/* Estilos para el header */
+header {
+    background-color: #A635FF;
+    padding: 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    position: relative;
+}
+
+#tituloPag {
+    text-align: center;
+    /* Centra el texto */
+    /* Otros estilos adicionales que desees aplicar */
+}
+
+
+
+.logo {
+    width: 75px;
+    /* Modifica el tamaño de la imagen */
+    height: auto;
+    margin-right: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    /* Añade una sombra suave alrededor del logo */
+    border-radius: 50%;
+    /* Hace que el logo tenga bordes redondeados */
+    position: fixed;
+    top: 12px;
+    /* Ajusta la distancia desde arriba según tu preferencia */
+    left: 20px;
+    /* Ajusta la distancia desde la izquierda según tu preferencia */
+    z-index: 1000;
+    /* Asegura que esté por encima de otros elementos */
+    position: absolute;
+    left: 15px;
+    top: 10px;
+}
+
+
+/* Estilos para el botón del logo */
+.logo-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    /* border-radius: 8px; */
+}
+
+/* Estilos para la barra de búsqueda en el header */
+
+#searchBar.search-bar {
+    width: 850px;
+    font-size: 25px;
+    margin-left: 50px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: #EFB7FF;
+    margin: 0 auto;
+}
+
+
+/* Estilos para el menú desplegable */
+.dropdown {
+    position: relative;
+    margin-left: auto;
+    right: 75px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+
+
+}
+
+/* Estilos para el contenido del menú desplegable */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #EFB7FF;
+    /*PONER COLOR SECUNDARIO AQUIIIIIIII*/
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border: 1px solid #EFB7FF;
+    padding: 10px;
+    left: -45px;
+    /* Ajusta la posición a la izquierda */
+    top: 100%;
+    /* Mueve el menú debajo del botón */
+}
+
+/* Estilos para los enlaces dentro del menú desplegable */
+.dropdown-content a {
+    color: black;
+    padding: 15px 20px;
+    text-decoration: none;
+    display: block;
+
+}
+
+/* Estilos para los enlaces en el menú desplegable al pasar el ratón */
+.dropdown-content a:hover {
+    background-color: #A635FF;
+}
+
+/* Mostrar el menú desplegable al pasar el ratón sobre el botón */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-img {
+    width: 50px;
+}
+
+.dropdown button {
+    background-color: transparent;
+    /* Establece el fondo transparente para el botón */
+}
