@@ -57,18 +57,6 @@ header {
     /* border-radius: 8px; */
 }
 
-/* Estilos para la barra de búsqueda en el header */
-
-#searchBar.search-bar {
-    width: 850px;
-    font-size: 25px;
-    margin-left: 50px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    background-color: #EFB7FF;
-    margin: 0 auto;
-}
-
 
 /* Estilos para el menú desplegable */
 .dropdown {
@@ -167,6 +155,34 @@ header {
     line-height: 1.5;
     margin-bottom: 10px;
 }
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.search-bar {
+    width: 50%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.search-bar:focus {
+    outline: none;
+    border-color: #007bff; /* Cambia el color del borde al enfocar la barra de búsqueda */
+}
+
+/* Estilo para centrar la barra de búsqueda */
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px; /* Agrega margen inferior para separarla del contenido siguiente */
+    width: 100%;
+}
+
 
 
 

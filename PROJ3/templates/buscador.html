@@ -1,3 +1,4 @@
+<!-- home1.html -->
 <!DOCTYPE html>
 <html lang="es">
 
@@ -12,12 +13,15 @@
 <body>
     <header>
         <button class="logo-btn">
-            <a href="/">
+            <a href="html.html">
                 <img src="{{ url_for('static', filename='images/logo web clasepeque.png') }}" alt="Botón de imagen"
                     class="logo">
             </a>
         </button>
-        <input type="text" placeholder="Buscar" id="searchBar" class="search-bar">
+        <form action="{{ url_for('buscar') }}" method="POST">
+            <input type="text" name="query" placeholder="Buscar...">
+            <button type="submit">Buscar</button>
+        </form>
         <div class="dropdown">
             <button class="dropdown-btn">
                 <img src="{{ url_for('static', filename='images/klipartz.com.png') }}" alt="Imagen de desplegable"
@@ -32,24 +36,31 @@
     </header>
     <div class="wrapper">
         <div class="container" id="games-list">
-            <div class="card">
-                <a href="{{ url_for('juego', game_id=game.id) }}">
-                    <img class="cover" src="{{ game.cover }}" alt="{{ game.name }}">
-                    <div class="content">
-                        <h1 class="h1-card">{{ game.name }}</h1>
-                        <p class="p-card">Géneros: {{ ', '.join(game.genres) }}</p>
-                        <p class="p-card">Fecha de salida: {{ game.release_dates }}</p>
-                    </div>
-                </a>
+            {% if resultados %}
+            <div class="container" id="games-list">
+                <!-- Iterar sobre los juegos que coinciden con la búsqueda y mostrar tarjetas -->
+                {% for game in resultados %}
+                <div class="card">
+                    <a href="{{ url_for('juego', game_id=game.id) }}"> <!-- Enlace a la página del juego -->
+                        <img class="cover" src="{{ game.cover }}" alt="{{ game.name }}">
+                        <div class="content">
+                            <h1 class="h1-card">{{ game.name }}</h1>
+                            <p class="p-card">Géneros: {{ ", ".join(game.genres) }}</p>
+                            <p class="p-card">Fecha de salida: {{ game.release_dates }}</p>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
             </div>
-            
+            {% else %}
+            <p>No se encontraron resultados para "{{ query }}"</p>
+            {% endif %}
+
         </div>
     </div>
     <footer>
         <p>&copy; 2024 Kiryu.DB</p>
     </footer>
-
-
 </body>
 
 </html>
