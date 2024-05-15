@@ -166,6 +166,28 @@ body {
     margin-top: 10px;
 }
 
+.search-bar {
+    width: 50%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.search-bar:focus {
+    outline: none;
+    border-color: #007bff; /* Cambia el color del borde al enfocar la barra de búsqueda */
+}
+
+/* Estilo para centrar la barra de búsqueda */
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px; /* Agrega margen inferior para separarla del contenido siguiente */
+    width: 100%;
+}
+
 
 
 footer {

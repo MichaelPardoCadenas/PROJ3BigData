@@ -16,7 +16,12 @@
                     class="logo">
             </a>
         </button>
-        <input type="text" placeholder="Buscar" id="searchBar" class="search-bar">
+        <div class="search-container"> <!-- Inicia el contenedor de búsqueda aquí -->
+            <form action="{{ url_for('buscar') }}" method="POST">
+                <input type="text" name="query" placeholder="Buscar..." class="search-bar">
+                <button type="submit">Buscar</button>
+            </form>
+        </div>
         <div class="dropdown">
             <button class="dropdown-btn">
                 <img src="{{ url_for('static', filename='images/klipartz.com.png') }}" alt="Imagen de desplegable"
